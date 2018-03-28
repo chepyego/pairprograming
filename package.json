@@ -1,0 +1,24 @@
+{
+  "name": "pairprograming",
+  "version": "1.0.0",
+  "description": "pairprogramming milestones",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dessHub/pairprograming.git"
+  },
+  "author": "jmeimah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dessHub/pairprograming/issues"
+  },
+  "homepage": "https://github.com/dessHub/pairprograming#readme"
+}
