@@ -1,30 +1,12 @@
-const express=require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
-const  hostname= 'localhost'
-const port=8080;
-
+const router = require('./routes/index');
 
 const app =express();
 
 app.use(bodyParser());
-app.get('/', (req,res)=>{
-    res.send('helo world')
-}   )
-app.post('/add' ,(req, res)=>{
-    let name=req.body.name;
-    let email=req.body.email;
-    let age =req.body.age;
+app.use('/', router);
 
-    var resp = {
-        name: name,
-        email: email,
-        age: age
-    };
-     console.log(resp);
-    res.send(resp);
-})
-
-
-app.listen( port, function () {
-    console.log('its working')
+app.listen( 5000, ()=> {
+    console.log('server is live on localhost:5000')
 })
