@@ -37,6 +37,12 @@ router.put('/updateuser:id', (req, res) => {
     res.json(user);
 })
 
+router.delete('/user:id', (req, res) => {  // Endpoint to retrieve single user item
+     let id = req.params.id; // id from the endpoint 
+     let user = removeUser(id); 
+     res.json(user);
+});
+
 let user = {};
 let users = [];
 console.log("top " + users );
@@ -70,7 +76,7 @@ let addUser = (name, description, date) => {
     user.description = description;
     user.date = date;
     users.push(user);
-    return user;
+    return users;
 
 }
 console.log("bottom " + users);
@@ -97,6 +103,15 @@ let getUser = (id) => {   // Function to retrieve singler user item
        }
    }
 }
+
+let removeUser = (id) => {   // Function to retrieve singler user item
+    for(let x=0; x<users.length; x++){
+        if(users[x].id == id){
+            users.splice(x, 1);
+            return users;
+        }
+    }
+ }
 
 
 module.exports = router;
